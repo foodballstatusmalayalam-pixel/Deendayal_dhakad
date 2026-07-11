@@ -52,30 +52,30 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-                    InlineKeyboardButton('🔰 ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 🔰', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('✰ 𝐴ᴅᴅ 𝑀ᴇ 𝑇ᴏ 𝑌ᴏᴜʀ 𝐺ʀᴏᴜᴘ ✰', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('ᴛᴏᴘ sᴇᴀʀᴄʜɪɴɢ ⭐', callback_data="topsearch"),
-                    InlineKeyboardButton(' ʜᴇʟᴘ 📢', callback_data='help'),
+                    InlineKeyboardButton('◀𝑇ᴏᴘ 𝑆ᴇᴀʀᴄʜ', callback_data="topsearch"),
+                    InlineKeyboardButton(' 𝐻ᴇʟᴘ ▶', callback_data='help'),
                 ],[
-                    InlineKeyboardButton(' ᴀʙᴏᴜᴛ 📖', callback_data='about'),
-                    InlineKeyboardButton('ᴇᴀʀɴ ᴍᴏɴᴇʏ..💵', callback_data="shortlink_info")
+                    InlineKeyboardButton('𝐴ʙᴏᴜᴛ ▷', callback_data='about'),
+                    InlineKeyboardButton('𝐸ᴀʀɴ 𝑀ᴏɴᴇʏ ▷', callback_data="shortlink_info")
                 ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         current_time = datetime.now(pytz.timezone(TIMEZONE))
         curr_time = current_time.hour        
         if curr_time < 12:
-            gtxt = "ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ 🌞" 
+            gtxt = "𝐺ᴏᴏᴅ 𝑀ᴏʀɴɪɴɢ" 
         elif curr_time < 17:
-            gtxt = "ɢᴏᴏᴅ ᴀғᴛᴇʀɴᴏᴏɴ 🌓" 
+            gtxt = "𝐺ᴏᴏᴅ 𝐴ғᴛᴇʀɴᴏᴏɴ " 
         elif curr_time < 21:
-            gtxt = "ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ 🌘"
+            gtxt = "𝐺ᴏᴏᴅ 𝐸ᴠᴇɴɪɴɢ "
         else:
-            gtxt = "ɢᴏᴏᴅ ɴɪɢʜᴛ 🌑"
+            gtxt = "𝐺ᴏᴏᴅ 𝑁ɪɢʜᴛ "
         m=await message.reply_text("⏳")
         await asyncio.sleep(0.4)
         await m.delete()        
         await message.reply_photo(
-            photo=random.choice(PICS),
+            photo=random.choice("https://graph.org/file/ab0ce7912d37d776a3c1c-23c02309cc489707f4.jpg"),
             caption=script.START_TXT.format(message.from_user.mention, gtxt, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
@@ -84,25 +84,25 @@ async def start(client, message):
 
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-                    InlineKeyboardButton('🔰 ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 🔰', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('✰ 𝐴ᴅᴅ 𝑀ᴇ 𝑇ᴏ 𝑌ᴏᴜʀ 𝐺ʀᴏᴜᴘ ✰', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('ᴛᴏᴘ sᴇᴀʀᴄʜɪɴɢ ⭐', callback_data="topsearch"),
-                    InlineKeyboardButton(' ʜᴇʟᴘ 📢', callback_data='help'),
+                    InlineKeyboardButton('◀𝑇ᴏᴘ 𝑆ᴇᴀʀᴄʜ', callback_data="topsearch"),
+                    InlineKeyboardButton(' 𝐻ᴇʟᴘ ▶', callback_data='help'),
                 ],[
-                    InlineKeyboardButton(' ᴀʙᴏᴜᴛ 📖', callback_data='about'),
-                    InlineKeyboardButton('ᴇᴀʀɴ ᴍᴏɴᴇʏ..💵', callback_data="shortlink_info")
+                    InlineKeyboardButton(' 𝐴ʙᴏᴜᴛ ▷', callback_data='about'),
+                    InlineKeyboardButton('𝐸ᴀʀɴ 𝑀ᴏɴᴇʏ ▷', callback_data="shortlink_info")
                 ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         current_time = datetime.now(pytz.timezone(TIMEZONE))
         curr_time = current_time.hour        
         if curr_time < 12:
-            gtxt = "ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ 🌞" 
+            gtxt = "𝐺ᴏᴏᴅ 𝑀ᴏʀɴɪɴɢ" 
         elif curr_time < 17:
-            gtxt = "ɢᴏᴏᴅ ᴀғᴛᴇʀɴᴏᴏɴ 🌓" 
+            gtxt = "𝐺ᴏᴏᴅ 𝐴ғᴛᴇʀɴᴏᴏɴ" 
         elif curr_time < 21:
-            gtxt = "ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ 🌘"
+            gtxt = "𝐺ᴏᴏᴅ 𝐸ᴠᴇɴɪɴɢ"
         else:
-            gtxt = "ɢᴏᴏᴅ ɴɪɢʜᴛ 🌑"
+            gtxt = "𝐺ᴏᴏᴅ 𝑁ɪɢʜᴛ "
         m=await message.reply_text("⏳")
         await asyncio.sleep(0.4)
         await m.delete()        
