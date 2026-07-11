@@ -66,16 +66,16 @@ async def start(client, message):
         if curr_time < 12:
             gtxt = "𝐺ᴏᴏᴅ 𝑀ᴏʀɴɪɴɢ" 
         elif curr_time < 17:
-            gtxt = "𝐺ᴏᴏᴅ 𝐴ғᴛᴇʀɴᴏᴏɴ " 
+            gtxt = "𝐺ᴏᴏᴅ 𝐴ғᴛᴇʀɴᴏᴏɴ" 
         elif curr_time < 21:
-            gtxt = "𝐺ᴏᴏᴅ 𝐸ᴠᴇɴɪɴɢ "
+            gtxt = "𝐺ᴏᴏᴅ 𝐸ᴠᴇɴɪɴɢ"
         else:
             gtxt = "𝐺ᴏᴏᴅ 𝑁ɪɢʜᴛ "
         m=await message.reply_text("⏳")
         await asyncio.sleep(0.4)
         await m.delete()        
         await message.reply_photo(
-            photo=random.choice("https://graph.org/file/ab0ce7912d37d776a3c1c-23c02309cc489707f4.jpg"),
+            photo=random.choice(["https://graph.org/file/ab0ce7912d37d776a3c1c-23c02309cc489707f4.jpg"]),
             caption=script.START_TXT.format(message.from_user.mention, gtxt, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
